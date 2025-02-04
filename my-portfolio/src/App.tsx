@@ -1,8 +1,12 @@
-import './App.css'
+import Card from "./Card/Card.tsx"
 
 function App() {
-  return (
-    <h1>Hello Worlds</h1>
+  return(
+    <>
+      <Card/>
+      <Card/>
+      <Card/>
+    </>
   )
 }
 
