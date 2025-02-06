@@ -1,46 +1,28 @@
-import StudentInfo from './UserGretting.tsx'
-
+import List from './List.tsx'
 
 function App() {
+
+  const fruits = [
+    {id: 1, name: 'apple', calories: 95},
+    {id: 2, name: 'orange', calories: 45},
+    {id: 3, name: 'banana', calories: 105},
+    {id: 4, name: 'coconut', calories: 150},
+    {id: 5, name: 'pineapple', calories: 37}
+  ];
+
+  const vegetable  = [
+    {id: 1, name: 'potato', calories: 95},
+    {id: 2, name: 'cucumber', calories: 45},
+    {id: 3, name: 'eggplant', calories: 105},
+    {id: 4, name: 'pumkin', calories: 150},
+    {id: 5, name: 'carrot', calories: 37}
+  ]
+
   return(
     <>
-      <div className='Container'>
-      <StudentInfo
-        is_student = {true}
-        student_name='James Christopher C. Tagupa'
-        student_age={20}
-        student_address='Mindanao Homes'
-        student_course='Bachelor of Science of Technology'
-        student_section = 'IT2R2'
-      />
-
-      <StudentInfo
-        is_student = {true}
-        student_name='James Christopher C. Tagupa'
-        student_age={20}
-        student_address='Mindanao Homes'
-        student_course='Bachelor of Science of Technology'
-        student_section = 'IT2R2'
-      />
-
-     <StudentInfo
-        is_student = {true}
-        student_name='James Christopher C. Tagupa'
-        student_age={20}
-        student_address='Mindanao Homes'
-        student_course='Bachelor of Science of Technology'
-        student_section = 'IT2R2'
-      />
-
-      <StudentInfo
-        is_student = {true}
-        student_name='James Christopher C. Tagupa'
-        student_age={20}
-      />
-      
-      <StudentInfo
-        is_student = {true}
-      />
+      <div className='container'>
+        {fruits.length > 0 && <List list={fruits} category='Fruits'/>}
+        {fruits.length > 0 && <List list={vegetable} category='Vegetable'/>}
       </div>
     </>
   )
