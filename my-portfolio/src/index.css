@@ -1,4 +1,12 @@
-.card
+.Container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_container
 {
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: 10px;
@@ -7,11 +15,29 @@
   margin: 20px;
   text-align: center;
   display: inline-block;
-  width: 10%;
-  height: 10%;
+  width: 10vw;
+  height: 10vh;
+  transition: background-color 400ms ease-in-out, width 400ms ease-in-out, height 400ms ease-in-out;
+  overflow: hidden;
 }
 
-.card .profile_image
+.card_container:hover
+{
+  background-color: green;
+  width: 15vw;
+  height: 20vh;
+  cursor: pointer;
+}
+
+h2, h3
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+
+}
+
+
+/* .card .profile_image
 {
   border-radius: 50%;
   width: 100%;
@@ -31,4 +57,4 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   margin: 10px;
-}
+} */

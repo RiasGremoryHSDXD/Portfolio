@@ -1,26 +1,45 @@
-interface UserGrettingProps
+interface UserGetting
 {
-    isLoggedIn?: boolean;
-    username?: string;
-    password?: string;
+  is_student?: boolean;
+  student_name?: string;
+  student_age?: number;
+  student_address?: string;
+  student_course?: string;
+  student_section?: string;
 }
 
-
-function UserGretting(
-{
-    isLoggedIn = false,
-    username = "Guest",
-    password = "Guest"
-}:UserGrettingProps
-) {
-  if(isLoggedIn)
+function UserGetting(
   {
-    return <h1>Welcome back, {username} and your password is: {password}</h1>;
+    is_student = false,
+    student_name = "NULL",
+    student_age = 0,
+    student_address = "NULL",
+    student_course = "NULL",
+    student_section = "NULL"
+  }:UserGetting
+)
+{
+  if(is_student)
+  {
+    return(
+      <div className="card_container">
+        <h2>{student_name}</h2>
+        <h3>{student_age}</h3>
+        <h3>{student_address}</h3>
+        <h3>{student_course}</h3>
+        <h3>{student_section}</h3>
+      </div>
+    );
   }
   else
   {
-    return <h1>Please sign up.</h1>;
+    return
+    {
+      <div className="card_container">
+        <h1>This is not a student</h1>
+      </div>
+    }
   }
 }
 
-export default UserGretting;
+export default UserGetting
