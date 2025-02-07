@@ -1,9 +1,9 @@
-import Profile from './ProfilePicture.tsx'
+import Counter from "./counter.tsx"
 
 function App()
 {
   return(
-    <Profile/>
+    <Counter/>
   )
 }
 
