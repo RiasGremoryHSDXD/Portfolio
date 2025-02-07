@@ -1,9 +1,9 @@
-import Counter from "./counter.tsx"
+import MyComponent from "./MyComponent.tsx"
 
 function App()
 {
   return(
-    <Counter/>
+    <MyComponent/>
   )
 }
 

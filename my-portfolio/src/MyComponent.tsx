@@ -1,37 +1,43 @@
-import {useState} from "react";
+import { useState } from "react"
 
 function MyComponent()
 {
-    let [name, setName] = useState("");
-    let [age, setAge] = useState(0);
-    let [isEmployee, setEmployee] = useState(false);
+    let [name, setName] = useState()
+    let [age, setAge] = useState()
+    let [address, setAddress] = useState()
+    let [payment, setPayment] = useState()
+    let [mode_of_delivery, setDelivery] = useState()
 
-    const updateName = (name:string) => setName(name)
-    const updateAge = () => setAge(preAge => preAge + 1 )
-    const updateEmployee = () => setEmployee(!isEmployee)
-
-    const resetData = () => 
-    {
-        setName('')
-        setAge(0)
-        setEmployee(false)
-    }
+    const updateName = (event:any)=> setName(event.target.value)
+    const updateAge = (event:any) => setAge(event.target.value)
+    const updateAddress = (event:any) => setAddress(event.target.value)
+    const updatePaymentMethod = (event:any) => setPayment(event.target.value)
+    const updateDeliveryMethod = (event:any) => setDelivery(event.target.value)
 
     return(
-        <div>
+        <>
+            <input type="text" onChange={updateName}/>
             <p>Name: {name}</p>
-            <button onClick={() => updateName('James Christopher C. Tagupa')}>Set name</button>
 
-            <p>Count Clicked: {age}</p>
-            <button onClick={updateAge}>Set name</button>
+            <input type="number" onChange={updateAge}/>
+            <p>Age: {age}</p>
 
-            <p>Employee Status: {isEmployee ? 'True' : 'False'}</p>
-            <button onClick={updateEmployee}>Toggle Employee Status</button>
+            <input type="text" onChange={updateAddress} />
+            <p>Address: {address}</p>
 
-            <br />
-            <button onClick={resetData}>Reset Data</button>
-        </div>
-    );
+            <select onChange={updatePaymentMethod}>
+                <option value="No payment been selected">Select Option</option>
+                <option value="Master Card">Master Card</option>
+                <option value="Visa">Visa</option>
+                <option value="Gcash">Gcash</option>
+            </select>
+            <p>Payment method: {payment}</p>
+
+            <input type="radio" value="Pick Up" checked={mode_of_delivery === "Pick Up"} onChange={updateDeliveryMethod}/>
+            <input type="radio" value='Delivery' checked={mode_of_delivery === "Delivery"} onChange={updateDeliveryMethod} />
+            <p>Shipping method: {mode_of_delivery}</p>
+        </>
+    )
 }
 
 export default MyComponent
