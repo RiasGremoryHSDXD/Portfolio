@@ -1,8 +1,30 @@
 /*
+  Color Picker
+*/
+
+.color_picker_container
+{
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.color_display
+{
+  width: 20vw;
+  height: 20vh;
+  border-radius: 20px;
+  transition: 0.25s ease;
+}
+
+/*
   useState
 */
 
-.container
+/* .container
 {
   display: flex;
   flex-direction: column;
@@ -27,7 +49,7 @@ button:hover
 {
   background-color: grey;
   cursor: pointer;
-}
+} */
 
 /*
   Render List

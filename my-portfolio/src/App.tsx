@@ -1,9 +1,9 @@
-import MyComponent from "./MyComponent.tsx"
+import ColorPicker from "./ColorPicker.tsx"
 
 function App()
 {
   return(
-    <MyComponent/>
+    <ColorPicker/>
   )
 }
 
