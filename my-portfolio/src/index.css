@@ -2,7 +2,7 @@
   Color Picker
 */
 
-.color_picker_container
+/* .color_picker_container
 {
   font-family: 'Courier New', Courier, monospace;
   display: flex;
@@ -18,7 +18,7 @@
   height: 20vh;
   border-radius: 20px;
   transition: 0.25s ease;
-}
+} */
 
 /*
   useState

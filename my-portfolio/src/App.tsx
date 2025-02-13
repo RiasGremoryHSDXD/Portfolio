@@ -1,9 +1,9 @@
-import ColorPicker from "./ColorPicker.tsx"
+import UpdateFunction from "./updateFunction.tsx"
 
 function App()
 {
   return(
-    <ColorPicker/>
+    <UpdateFunction/>
   )
 }
 
