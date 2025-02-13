@@ -1,9 +1,9 @@
-import UpdateFunction from "./updateFunction.tsx"
+import MyComponent from "./MyComponent.tsx"
 
 function App()
 {
   return(
-    <UpdateFunction/>
+    <MyComponent/>
   )
 }
 
