@@ -1,56 +1,69 @@
 import { useState } from "react";
 
-function MyComponent() {
-    const [foods, setFoods] = useState<string[]>([]);
-    const [newFood, setNewFood] = useState(""); // Stores the input value
+type Car = {
+    year: number;
+    maker: string;
+    model: string;
+};
 
-    const handleInputChange = (event:any) => {
-        setNewFood(event.target.value); // Updates the input value state
-    }
+function MyComponent()
+{
+    const [car, setCars] = useState<Car[]>([]);
+    const [carYear, setYear] = useState(new Date().getFullYear());
+    const [carMake, setCarMake] = useState("");
+    const [carModel, setModel] = useState("");
 
-    const handleAddFood = () => {
-        
-        if(validatedInputIsAlphabet(newFood) && !data_isAllWhiteSpace(newFood))
-        {
-            setFoods(prevState => [...prevState, newFood]);
-            setNewFood("");
+    function handleAddCar(){
+
+        const newCar: Car = {
+            year: carYear,
+            maker: carMake,
+            model: carModel 
         }
-        else
-        {
-            alert(newFood.length)
-            // alert('Only the alphabet and space are allowed.')
-        }
+
+        setCars(prevState => [...prevState, newCar]);
+        setYear(new Date().getFullYear());
+        setCarMake("");
+        setModel("");
+
     }
 
-    const data_isAllWhiteSpace = (check_value:string) =>
-    {
-        return /^\s+$/.test(check_value)
+    function handleRemoveCar(index:number){
+        setCars(prevState => prevState.filter((_, i) => i !== index));
     }
 
-    
-    const validatedInputIsAlphabet = (check_value:string) => {
-        return /^[a-zA-Z\s]+$/.test(check_value)
+    function handleChangeYear(event:any){
+        console.log(typeof event.target.value)
+        setYear(event.target.value)
     }
 
-    const count_current_item = () => {
-        return foods.length;
+    function handleMakeChange(event:any){
+        setCarMake(event.target.value)
     }
 
-    return (
-        <div className="main_cointainer">
-            <div className="center">
-                <p>Buy list Food:</p>
-                <ul>
-                    {foods.map((food, index) => (
-                        <li key={index}>{food}</li>
-                    ))}
-                </ul>
-                <p>Current item count: {count_current_item()}</p>
-                <input type="text" value={newFood} onChange={handleInputChange} className="wew"/><br />
-                <button onClick={handleAddFood}>Add Food</button>
-                </div>
+    function handleModelChange(event:any){
+        setModel(event.target.value)
+    }
+    return(
+        <div>
+            <h2>List of Car Object</h2>
+
+            <ul>
+                {car.map((car_element, index) =>
+                <li key={index} onClick={() => handleRemoveCar(index)}>
+                    {car_element.year} {car_element.maker} {car_element.model}
+                </li>)}
+            </ul>
+
+            <input type="number" value={carYear} onChange={handleChangeYear}/><br />
+            <input type="text" value={carMake} onChange={handleMakeChange}
+                    placeholder="Enter car make"/><br />
+            <input type="text" value={carModel} onChange={handleModelChange}
+                    placeholder="Enter car model"/><br />
+            <button onClick={handleAddCar}>Add Car</button>
+
         </div>
-    );
+    )
 }
 
-export default MyComponent;
+export default MyComponent
