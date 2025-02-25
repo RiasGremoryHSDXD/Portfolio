@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function MyComponent() {
-    const [foods, setFoods] = useState([""]);
+    const [foods, setFoods] = useState<string[]>([]);
     const [newFood, setNewFood] = useState(""); // Stores the input value
 
     const handleInputChange = (event:any) => {
@@ -9,21 +9,46 @@ function MyComponent() {
     }
 
     const handleAddFood = () => {
-        setFoods(prevState => [...prevState, newFood]); // Add new food
-        setNewFood(""); // Clear input field after adding
+        
+        if(validatedInputIsAlphabet(newFood) && !data_isAllWhiteSpace(newFood))
+        {
+            setFoods(prevState => [...prevState, newFood]);
+            setNewFood("");
+        }
+        else
+        {
+            alert(newFood.length)
+            // alert('Only the alphabet and space are allowed.')
+        }
+    }
+
+    const data_isAllWhiteSpace = (check_value:string) =>
+    {
+        return /^\s+$/.test(check_value)
+    }
+
+    
+    const validatedInputIsAlphabet = (check_value:string) => {
+        return /^[a-zA-Z\s]+$/.test(check_value)
+    }
+
+    const count_current_item = () => {
+        return foods.length;
     }
 
     return (
-        <div>
-            <p>Current Food:</p>
-            <ul>
-                {foods.map((food, index) => (
-                    <li key={index}>{food}</li>
-                ))}
-            </ul>
-
-            <input type="text" value={newFood} onChange={handleInputChange} /><br />
-            <button onClick={handleAddFood}>Add Food</button>
+        <div className="main_cointainer">
+            <div className="center">
+                <p>Buy list Food:</p>
+                <ul>
+                    {foods.map((food, index) => (
+                        <li key={index}>{food}</li>
+                    ))}
+                </ul>
+                <p>Current item count: {count_current_item()}</p>
+                <input type="text" value={newFood} onChange={handleInputChange} className="wew"/><br />
+                <button onClick={handleAddFood}>Add Food</button>
+                </div>
         </div>
     );
 }

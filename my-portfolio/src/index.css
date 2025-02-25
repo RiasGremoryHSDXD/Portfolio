@@ -1,3 +1,49 @@
+
+.main_cointainer
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 4px 4px 10px rgba(10, 10, 10, 0.2);
+}
+.center
+{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  padding: 15px;
+}
+.center ul
+{
+  margin: 0;
+}
+
+.center p
+{
+  margin: 0;
+  padding: 0;
+}
+.wew
+{
+  border: 1px solid red;
+}
+
+button
+{
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  border: none;
+  background-color: greenyellow;
+  align-self: center;
+}
+
+button:hover
+{
+  background-color: gray;
+  cursor: pointer;
+}
 /*
   Color Picker
 */
