@@ -1,9 +1,9 @@
-import MyComponent from "./MyComponent.tsx"
+import ToDoList from "./ToDoList.tsx"
 
 function App()
 {
   return(
-    <MyComponent/>
+    <ToDoList/>
   )
 }
 
