@@ -1,9 +1,11 @@
-import ToDoList from "./ToDoList.tsx"
+import MyComponent from "./MyComponent.tsx"
 
 function App()
 {
   return(
-    <ToDoList/>
+  <div>
+    <MyComponent/>
+  </div>
   )
 }
 
