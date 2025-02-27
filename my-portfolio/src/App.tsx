@@ -1,11 +1,9 @@
-import MyComponent from "./MyComponent.tsx"
+import DigitalClock from "./DigitalClock.tsx"
 
 function App()
 {
   return(
-  <div>
-    <MyComponent/>
-  </div>
+    <DigitalClock/>
   )
 }
 
