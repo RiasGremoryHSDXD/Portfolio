@@ -1,9 +1,9 @@
-import DigitalClock from "./DigitalClock.tsx"
+import ComponentA from "./ComponentA.tsx"
 
 function App()
 {
   return(
-    <DigitalClock/>
+    <ComponentA/>
   )
 }
 
