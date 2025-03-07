@@ -1,9 +1,11 @@
-import MyComponent from "./MyComponent.tsx"
+import StopWatch from "./StopWatch.tsx"
 
 function App()
 {
   return(
-    <MyComponent/>
+    <div>
+      <StopWatch/>
+    </div>
   )
 }
 
