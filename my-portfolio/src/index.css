@@ -41,7 +41,7 @@ body
     min-width: 300px;
     border: none;
     cursor: pointer;
-    font-size: 2vw;
+    font-size:  2vw;
 }
 
 .button-container > button:nth-child(1)
