@@ -1,9 +1,9 @@
-import ComponentA from "./ComponentA.tsx"
+import MyComponent from "./MyComponent.tsx"
 
 function App()
 {
   return(
-    <ComponentA/>
+    <MyComponent/>
   )
 }
 
